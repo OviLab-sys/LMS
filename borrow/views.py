@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404,redirect
 from .models import Borrowing
-from ..books.models import Books
-from ..students.models import Student
+from books.models import Books
+from students.models import Student
 from django.utils.timezone import now
 
 def borrow_list(request):
