@@ -4,12 +4,13 @@ from books.models import Books
 from students.models import Student
 from django.utils.timezone import now
 
+from django.shortcuts import render
+from .models import Borrowing
+
 def borrow_list(request):
     borrows = Borrowing.objects.all()
-    context = {
-        'borrows':borrows
-    }
-    return render(request, 'borrowing/borrow_list.html', context)
+    context = {'borrows': borrows}
+    return render(request, 'borrow/borrow_list.html', context)  
 
 def borrow_book( request, student_id, book_id):
     student = get_object_or_404(Student, id=student_id)

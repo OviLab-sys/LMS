@@ -1,4 +1,3 @@
-<!-- filepath: /home/ovi/programming/django/library/lms/templates/students/student_detail.html -->
 {% extends 'base.html' %}
 
 {% block title %}Student Details{% endblock %}
@@ -7,5 +6,5 @@
 <h2>{{ student.name }}</h2>
 <p><strong>Age:</strong> {{ student.age }}</p>
 <p><strong>Email:</strong> {{ student.email }}</p>
-<a href="{% url 'student_list' %}">Back to Student List</a>
-{% endblock%}
+<a href="{% url 'students:student_list' %}">Back to Student List</a> <!-- Fixed URL -->
+{% endblock %}

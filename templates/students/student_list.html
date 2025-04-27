@@ -1,4 +1,3 @@
-<!-- filepath: /home/ovi/programming/django/library/lms/templates/students/student_list.html -->
 {% extends 'base.html' %}
 
 {% block title %}Student List{% endblock %}
@@ -8,14 +7,14 @@
 <ul>
     {% for student in students %}
         <li>
-            <a href="{% url 'student_detail' student.id %}">{{ student.name }}</a> ({{ student.email }})
-            <a href="{% url 'student_update' student.id %}">Edit</a>
-            <form action="{% url 'student_delete' student.id %}" method="post" style="display:inline;">
+            <a href="{% url 'students:student_detail' student.id %}">{{ student.name }}</a> ({{ student.email }})
+            <a href="{% url 'students:student_update' student.id %}">Edit</a>
+            <form action="{% url 'students:student_delete' student.id %}" method="post" style="display:inline;">
                 {% csrf_token %}
                 <button type="submit">Delete</button>
             </form>
         </li>
     {% endfor %}
 </ul>
-<a href="{% url 'student_create' %}">Add New Student</a>
+<a href="{% url 'students:student_create' %}">Add New Student</a>
 {% endblock %}

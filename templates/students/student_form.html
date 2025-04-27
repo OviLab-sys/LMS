@@ -15,5 +15,5 @@
     <input type="email" id="email" name="email" value="{{ student.email|default:'' }}"><br>
     <button type="submit">Save</button>
 </form>
-<a href="{% url 'student_list' %}">Cancel</a>
+<a href="{% url 'students:student_list' %}">Cancel</a>
 {% endblock %}

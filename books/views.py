@@ -6,10 +6,10 @@ from django.views.decorators.csrf import csrf_exempt
 def book_list(request):
     books = Books.objects.all()
     context = {'books':books}
-    return render(request, 'book/book_list.html',context)
+    return render(request, 'books/book_list.html',context)
 
 def book_detail(request, pk):
-    book = get_object_or_404(Books,pk)
+    book = get_object_or_404(Books,pk=pk)
     context = {'book': book}
     return render(request, 'books/book_detail.html', context)
 

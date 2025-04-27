@@ -11,12 +11,10 @@ def student_list(request):
     return render(request, 'students/student_list.html',context)
 
 #Retrieve details of a specific student
-def student_detail(request,pk):
-    student = get_object_or_404(Student, pk)
-    context = {
-        'students':student
-    }
-    return render(request, 'students/student_detail.html',context)
+def student_detail(request, pk):
+    student = get_object_or_404(Student, pk=pk)  # Pass pk as a keyword argument
+    context = {'student': student}
+    return render(request, 'students/student_detail.html', context)
 
 #create a new 
 @csrf_exempt

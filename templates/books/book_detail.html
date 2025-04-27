@@ -7,5 +7,5 @@
 <p><strong>Author:</strong> {{ book.author }}</p>
 <p><strong>Published Date:</strong> {{ book.published_date }}</p>
 <p><strong>ISBN:</strong> {{ book.isbn }}</p>
-<a href="{% url 'book_list' %}">Back to Book List</a>
+<a href="{% url 'books:book_list' %}">Back to Book List</a>
 {% endblock %}
